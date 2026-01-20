@@ -53,7 +53,7 @@ def analyze_password(password):
         feedback.append("add numbers to your password")
 
     #check for special characters
-    special_characters = "!@#$%^&*()_+-=[]{};:',.<>?/\ "
+    special_characters = "!@#$%^&*()_+-=[]{};:',.<>?/"
     if any(c in special_characters for c in password):
         strength += 1
     else:
@@ -73,8 +73,16 @@ def analyze_password(password):
 
 #main function
 def main():
-    password = input("Enter the password you want me to grade: ")
+    password = input("Enter your password to analyze: ")
     strength, feedback = analyze_password(password)
-    print(f"Password Strength: {strength}/6")
-    for item in feedback:
-        print(item)
+
+    print(f"Password Strength: {strength}/7")
+    if feedback:
+        print("Suggestions to improve your password:")
+        for suggestion in feedback:
+            print(f"- {suggestion}")
+    else:
+        print("Your password is strong!")
+        
+if __name__ == "__main__":
+    main()
