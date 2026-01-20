@@ -60,6 +60,15 @@ def analyze_password(password):
         feedback.append("add special characters to your password")
 
     #check for repeated characters
+    if len(set(password)) < len(password):
+        feedback.append("avoid using repeating character")
+    
+    #check for commun patters
+    common_patterns = ["123", "password", " qwerty", "abc"]
+    if any(pattern in password.lower() for pattern in common_patterns):
+        feedback.append("avoid using commun passwords like '123', 'password' or 'qwerty'")
+
+    return strength, feedback
 
 
 #main function
