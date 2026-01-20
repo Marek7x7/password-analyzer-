@@ -1,5 +1,4 @@
-#If you think this sounds boring, good. Boring projects force clean logic. This one teaches strings, functions, loops, dictionaries, file handling, and basic security thinking.
-#Takes a password from the user
+#Password Strength Analyzer
 
 #Analyzes its strength
 
