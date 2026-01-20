@@ -21,3 +21,23 @@
 #Repeated characters
 
 #Common patterns (like 123, password, qwerty)
+
+def analyze_password(password):
+    strength = 0
+    feedback = []
+
+    #check length
+    if len(password) >= 12:
+        strength += 2
+    elif len(password) >= 8:
+        strength += 1
+    else:
+        feedback.append("password is too short, use atleast 8 characters")
+
+#main function
+def main():
+    password = input("Enter the password you want me to grade: ")
+    strength, feedback = analyze_password(password)
+    print(f"Password Strength: {strength}/6")
+    for item in feedback:
+        print(item)
