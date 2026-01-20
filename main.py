@@ -34,6 +34,14 @@ def analyze_password(password):
     else:
         feedback.append("password is too short, use atleast 8 characters")
 
+    #check for uppercase letters
+    if any(str.isupper()for str in password):
+        strength += 1
+    else
+        feedback.append("add uppercase letters to your password")
+
+    
+
 #main function
 def main():
     password = input("Enter the password you want me to grade: ")
