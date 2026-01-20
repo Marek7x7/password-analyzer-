@@ -1,2 +1,2 @@
 print("hello world")
-print("i LIIKE PENMISSS")
+print("i LIIKE MAN")
