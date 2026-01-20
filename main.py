@@ -35,12 +35,32 @@ def analyze_password(password):
         feedback.append("password is too short, use atleast 8 characters")
 
     #check for uppercase letters
-    if any(str.isupper()for str in password):
+    if any(c.isupper() for c in password):
         strength += 1
-    else
+    else:
         feedback.append("add uppercase letters to your password")
 
+    #check for lowercase letters
+    if any(c.islower() for c in password):
+        strength += 1
+    else:
+        feedback.append("add lowercase letters to your password")
     
+    #check for numbers
+    if any(c.isdigit() for c in password):
+        strength += 1
+    else:
+        feedback.append("add numbers to your password")
+
+    #check for special characters
+    special_characters = "!@#$%^&*()_+-=[]{};:',.<>?/\ "
+    if any(c in special_characters for c in password):
+        strength += 1
+    else:
+        feedback.append("add special characters to your password")
+
+    #check for repeated characters
+
 
 #main function
 def main():
